@@ -1,0 +1,59 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# alt.doc
+
+{alt.doc} contains no useful function. Only alternative documentation.
+It has no strong dependency.
+
+Install with:
+
+``` r
+remotes::install_github("moodymudskipper/alt.doc")
+```
+
+Then in your R profile call
+`requireNamespace("alt.doc", quietly = TRUE)`. This will make all help
+files accessible silently and without attaching the package.
+
+# Why
+
+R has a handful of objects that are not extensively documented, many
+prefixed by a dot and aimed at advanced users.
+
+Keeping the doc terse is sometimes a choice, more to read might mean
+it’s not as easy to access the essential information. However we feel
+some topics are insufficiently documented and we propose alternative
+documentation for those.
+
+This will be work in progress for a long time, or forever.
+
+# contribute
+
+We make it convenient to work on the project a few minutes at a time.
+
+- Clone the repo :
+  `usethis::create_from_github("moodymudskipper/alt.doc", "~/path/to/alt.doc")`
+- Set in your R profile `options(alt.doc.path = "path/to/alt.doc")` :
+  `usethis::edit_r_profile()`
+- Call `alt.doc::new_doc(some.function)` to create a new script in your
+  {alt.doc} project, following a convenient template, or open the script
+  if it already exists.
+- Call `alt.doc::sync()` to reinstall, and make your new doc available
+
+The package only has these 2 exported functions and you’re not expected
+to ever need `library(alt.doc)`,
+
+Some loose guidelines :
+
+- If possible give a descriptive title to the help file rather than the
+  function name, that makes the index of this package more helpful.
+- One R script per documentation page, one documentation page per
+  script.
+- We might document several functions per help file when it makes sense
+  (e.g. `registerS3method` and `registerS3methods`).
+- It’s ok to have help files for non base functions
+- Sometimes a contribution to R itself might be more fitting, especially
+  if there are mistakes in the doc, use your judgement.
+- It’s ok to reference non base functions, like tidyverse or data.table
+  equivalent
