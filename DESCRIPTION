@@ -9,3 +9,5 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Suggests: 
     rlang
+URL: https://github.com/moodymudskipper/alt.doc
+BugReports: https://github.com/moodymudskipper/alt.doc/issues
