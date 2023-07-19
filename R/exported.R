@@ -5,8 +5,8 @@
 #'
 #' * `alt.doc::new_doc(f)` creates an R script in the {alt.doc} package.
 #' * `alt.doc::sync()` rebuilds the doc and reinstalls the package silently.
-#' * `alt.doc::pr()` commit changes to a newly created branch and opens a page to PR to the repo,
-#'  thens checks out the main branch back.
+#' * `alt.doc::pr()` commit changes to a newly created branch, checks out the main
+#'  branch back and opens a webpage to a new PR.
 #'
 #' The environment of this function is set to .BaseNamespaceEnv to avoid
 #' conflicts
@@ -68,8 +68,9 @@ sync <- function(alt.doc.path = getOption("alt.doc.path")) {
 pr <- function(branch, message = sprintf("document %s", branch), alt.doc.path = getOption("alt.doc.path")) {
   withr::local_dir(alt.doc.path)
   usethis::pr_init(branch)
-  gert::git_commit(msg)
+  gert::git_add(".")
+  gert::git_commit(message)
   usethis::pr_push()
-  gert::git_branch_checkout("master")
+  gert::git_branch_checkout("main")
 }
 
