@@ -41,8 +41,8 @@ We make it convenient to work on the project a few minutes at a time.
   if it already exists.
 - Call `alt.doc::sync()` to reinstall, and make your new doc available
 - Call `alt.doc::pr(some.function)` to commit changes to a newly created
-  branch, check out the main branch back and open a page to a PR to the
-  repo.
+  branch, check out the main branch back and open a webpage to a new PR
+  .
 
 The package only has these 3 exported functions and you’re not expected
 to ever need `library(alt.doc)`,
